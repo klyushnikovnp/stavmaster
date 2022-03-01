@@ -1,0 +1,16 @@
+<div{{ attributes.addClass('pt-4 feedback') }}>
+	<div class="container">
+		  {{ title_prefix }}
+		  {% if label %}
+		  <div class="w-100 text-center mb-3">
+			<h2{{ title_attributes }}>{{ label }}</h2>
+		  </div>
+		  {% endif %}
+		  {{ title_suffix }}
+		  {% block content %}
+		  		<div class="row"> 
+				{{ content }}
+				</div>
+		  {% endblock %}
+	</div>  
+</div>

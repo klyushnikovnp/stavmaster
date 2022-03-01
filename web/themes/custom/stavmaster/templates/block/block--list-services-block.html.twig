@@ -1,0 +1,16 @@
+<div{{ attributes.addClass('py-5 listServices') }}>
+	<div class="container">
+		  {{ title_prefix }}
+		  {% if label %}
+		  <div class="w-100 text-center mb-5">
+			<h2{{ title_attributes.addClass('text-white') }}>{{ label }}</h2>
+		  </div>
+		  {% endif %}
+		  {{ title_suffix }}
+		  {% block content %}
+		  		<div class="row"> 
+				{{ content }}
+				</div>
+		  {% endblock %}
+	</div>  
+</div>

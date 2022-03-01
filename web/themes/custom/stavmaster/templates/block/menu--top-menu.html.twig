@@ -1,0 +1,26 @@
+{% import _self as menus %}
+
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('nav topMenu d-block d-lg-flex align-items-center') }}>
+    {% else %}
+      <ul>
+    {% endif %} 
+    {% for item in items %}
+      <li{{ item.attributes.addClass('nav-item ml-lg-0 ml-xl-4 d-flex align-items-center') }}>
+	  {% if loop.index != 1 %}
+		<span class="material-icons">fiber_manual_record</span>
+	  {% endif %} 	
+        {{ link(item.title, item.url, item.attributes.addClass('nav-link')) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %} 
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

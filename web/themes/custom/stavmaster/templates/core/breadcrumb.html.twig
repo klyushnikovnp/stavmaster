@@ -1,0 +1,15 @@
+{% if breadcrumb %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb py-3 px-0">
+    {% for item in breadcrumb %}
+      <li class="breadcrumb-item d-flex align-items-center">
+        {% if item.url %}
+          <a href="{{ item.url }}" class="pr-2">{{ item.text }}</a> <span class="material-icons">fiber_manual_record</span> 
+        {% else %}
+          {{ item.text }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ol>
+  </nav>
+{% endif %}

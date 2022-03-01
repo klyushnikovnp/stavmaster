@@ -1,0 +1,15 @@
+<div{{ attributes.addClass('py-5 video text-center') }}>
+	<div class="container">
+		  {{ title_prefix }}
+		  {% if label %}
+			<h2{{ title_attributes.addClass('mb-5')}}>{{ label }}</h2>
+		  {% endif %}
+		  {{ title_suffix }}
+		  {% block content %}
+		  		<div class="row"> 
+				{{ content }}
+				</div>
+		  {% endblock %}
+		  <a href="/video" type="button" class="btn-lg btn-warning font-weight-bold">Смотри все видео</a>
+	</div>   
+</div>   

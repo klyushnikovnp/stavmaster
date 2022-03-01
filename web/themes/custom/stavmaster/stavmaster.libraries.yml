@@ -1,0 +1,25 @@
+bootstrap:
+ 
+  css: 
+    theme:
+      css/bootstrap.min.css: {}
+  js:
+    js/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
+    
+custom: 
+  
+  css:
+    theme: 
+      css/style.css: {}
+  js:
+    js/full.js: {}
+  dependencies:
+    - core/jquery 
+     
+yandex: 
+  header: true
+  js:
+    https://api-maps.yandex.ru/2.1/?apikey=b8ca0aaf-dc7c-4f94-91ce-897d9eaabc1f&lang=ru_RU: { type: external }      
+    

@@ -1,0 +1,11 @@
+<div class="banner carousel-item {{ fields.counter.content == '1' ? 'active':'' }}">
+	<img src="{{ fields.field_image.content }}" class="d-block w-100">
+	<div class="carousel-caption h-100 pb-5 text-left">
+		<div class="action px-4 py-1 p28">АКЦИЯ</div>
+        <div class="header pr-5 h-100">
+			<h2 class="mb-0 p42 px-3 py-2">{{ fields.field_header.content }}</h2>
+			<div class="text bg-white text-dark p30 shadow rounded-bottom px-4 py-3">{{ fields.field_text.content }}</div>			
+			<a class="btn btn-primary d-flex" href="#" role="button">Подробнее <span class="material-icons">navigate_next</span></a> 			
+		</div>
+    </div>
+</div>

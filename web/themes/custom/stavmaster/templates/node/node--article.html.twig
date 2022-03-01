@@ -1,0 +1,12 @@
+<div{{ content_attributes }}>
+	{{ content.body }}
+	<div class="col-12 articleImg px-0 my-5">
+	{{ content.field_images }}
+	</div>	
+	{% if display_submitted %}
+		{{ content.field_video }}
+	{% endif %}
+	<div class="col-12 articleTags px-0 d-flex">
+	{{ content.field_tags }}
+	</div>
+</div>

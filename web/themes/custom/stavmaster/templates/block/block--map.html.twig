@@ -1,0 +1,27 @@
+<div id="map" class="w-100 mb-5"></div>
+<script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map("map", {
+            center: [45.052162, 41.975237],
+            zoom: 16
+        });
+		
+		var myPlacemark = new ymaps.GeoObject({
+			geometry: {
+				type: "Point",
+				coordinates: [45.052162, 41.975237],
+			},
+			properties: {
+                hintContent: 'Stavmaster, г. Ставрополь, ул. Победы, 2'
+            }
+		});
+		
+		var myPlacemark = new ymaps.Placemark([45.052162, 41.975237], {
+            balloonContentHeader: "Stavmaster",
+            balloonContentBody: "г. Ставрополь, ул. Победы, 2",
+        });
+		myMap.geoObjects.add(myPlacemark);
+		myMap.behaviors.disable('scrollZoom');
+    }
+</script>

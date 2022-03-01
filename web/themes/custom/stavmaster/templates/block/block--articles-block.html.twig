@@ -1,0 +1,19 @@
+<div{{ attributes.addClass('py-5 articles') }}>
+	<div class="container">
+		  {{ title_prefix }}
+		  {% if label %}
+		  <div class="w-100 text-center mb-5">
+			<h2{{ title_attributes }}>{{ label }}</h2>
+		  </div>
+		  {% endif %}
+		  {{ title_suffix }}
+		  {% block content %}
+		  		<div class="row"> 
+				{{ content }}
+				</div>
+		  {% endblock %}
+		  <div class="w-100 text-center my-3">
+			<a href="/articles" type="button" class="btn-lg btn-warning font-weight-bold">Все статьи</a>
+		  </div>
+	</div>  
+</div>

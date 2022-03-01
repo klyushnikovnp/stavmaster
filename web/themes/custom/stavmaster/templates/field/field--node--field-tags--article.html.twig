@@ -1,0 +1,25 @@
+{% if label_hidden %}
+  {% if multiple %}
+	<ul>
+      {% for item in items %}
+			<li class="d-flex"><span class="material-icons">label</span> {{ item.content }}</li>
+      {% endfor %}
+	 </ul> 
+  {% else %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  {% endif %}
+{% else %}
+    <b>{{ label }}: </b>
+    {% if multiple %}
+    {% endif %}
+	<ul class="pl-2">
+      {% for item in items %}
+		{{ item.url }}
+			<li class="d-flex align-items-center"><span class="material-icons mr-1">bookmark</span> {{ item.content }}</li>
+      {% endfor %}
+	 </ul> 
+    {% if multiple %}
+    {% endif %}
+{% endif %}

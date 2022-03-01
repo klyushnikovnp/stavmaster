@@ -1,0 +1,24 @@
+<div id="carouselFeedback" class="carousel slide feedbackCarousel w-100" data-ride="carousel">
+  <ol class="carousel-indicators">
+	{% for row in rows %}
+		{% if loop.first %} 
+			<li data-target="#carouselFeedback" data-slide-to="{{ loop.index }}" class="active"></li>
+		{% else %}
+			<li data-target="#carouselFeedback" data-slide-to="{{ loop.index }}"></li>
+		{% endif %}
+	{% endfor %}  
+  </ol> 
+  <div class="carousel-inner">
+	{% for row in rows %}
+		{{ row.content }}
+	{% endfor %}  
+  </div>  
+  <a class="carousel-control-prev" href="#carouselFeedback" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Предыдущий</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselFeedback" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Следующий</span>
+  </a>
+</div>

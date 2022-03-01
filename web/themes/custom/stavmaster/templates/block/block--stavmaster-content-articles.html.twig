@@ -1,0 +1,14 @@
+<div{{ attributes.addClass('py-5 articles') }}>
+  {{ title_prefix }}
+  {% if label %}
+  <div class="mb-5">
+	<h2{{ title_attributes }}>{{ label }}</h2>
+  </div>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+		<div class="row"> 
+		{{ content }}
+		</div>
+  {% endblock %}
+</div>

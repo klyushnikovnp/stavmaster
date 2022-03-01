@@ -1,0 +1,150 @@
+<?
+
+/*
+*
+* @Вывод переменных конфигурации в блоке topContacts
+* @name -> основной телефон сайта
+* @slogan -> дополнительный телефон сайта
+*/
+function stavmaster_preprocess_block__top_contacts(&$variables) {
+	$site_config = \Drupal::config('system.site');
+	$variables['phone'] = $site_config->get('name');
+	$variables['phone2'] = $site_config->get('slogan');
+}	
+
+
+/*
+*
+* @Создание отдельного suggestions для заголовка на главной странице
+*/
+function stavmaster_theme_suggestions_block_alter(array &$suggestions, array $variables, $hook) {
+  if(in_array("block__stavmaster_page_title",$suggestions)){
+	$is_front = \Drupal::service('path.matcher')->isFrontPage();
+	if($is_front){ $suggestions[] = "block__stavmaster_page_title_frontpage"; }
+  }
+  if(in_array("block__stavmaster_content",$suggestions)){
+	$is_front = \Drupal::service('path.matcher')->isFrontPage();
+	if($is_front){ $suggestions[] = "block__stavmaster_content_frontpage"; }
+	
+	//suggestions для групп статей
+	if(@$variables['elements']['content']['#view_id'] == 'articles'){
+		$suggestions[] = $suggestions[2].'_'.@$variables['elements']['content']['#view_id'];
+	}
+	//suggestions для групп видео
+	if(@$variables['elements']['content']['#view_id'] == 'video'){
+		$suggestions[] = $suggestions[2].'_'.@$variables['elements']['content']['#view_id'];
+	}	
+	
+  }
+
+}
+
+
+/*
+*
+* @Создание отдельного suggestions для заголовка на главной странице
+*/
+function stavmaster_theme_suggestions_page_title_alter(array &$suggestions, array $variables, $hook) {
+	$is_front = \Drupal::service('path.matcher')->isFrontPage();
+	if($is_front){ $suggestions[] = "page_title_frontpage"; }
+}
+
+/*
+*
+* @Создание отдельного suggestions для node_article (статей) с видео
+*/
+function stavmaster_theme_suggestions_node_alter(array &$suggestions, array $variables, $hook) {
+	if(isset($variables['elements']['field_video'])){
+		if(count($variables['elements']['field_video']) > 2){
+			$suggestions[] = "node__article_with_video";
+		}
+	}
+}
+
+
+/*
+*
+* @Дабавление класса card-img-top для блоков, которые имют для изображений style 'card'
+*/
+function stavmaster_preprocess_image(&$variables) {
+	if($variables['style_name'] == 'card'){
+		$variables['attributes']['class'][] = 'card-img-top';	
+	}
+}	
+
+
+/*
+*
+* @Добавление в блок block--footer-logo.html.twig переменных 
+* @logo - путь к логотипу сайта
+*/
+function stavmaster_preprocess_block__footer_logo(&$variables) {
+	$variables['logo'] = '/'.drupal_get_path('theme','stavmaster').'/images/logo.png';
+	$variables['year'] = date('Y');
+}	
+
+/*
+*
+* @Добавление в блок block--copyright.html.twig переменных 
+* @year - текущий год
+*/
+function stavmaster_preprocess_block__copyright(&$variables) {
+	$variables['year'] = date('Y');
+}	
+
+/*
+*
+* @Добавление в блок block--footer-contacts.html.twig переменных 
+* @phone - основной телефон
+* @mail - основной email
+*/
+function stavmaster_preprocess_block__footer_contacts(&$variables) {
+	$config = \Drupal::config('system.site');
+	$variables['phone'] = $config->get('name');
+	$variables['email'] = $config->get('mail');
+}	
+
+/*
+*
+* @Замена в крошках имени 'Home' на 'Главная'
+*/
+function stavmaster_preprocess_breadcrumb(&$variables) {
+	$variables['breadcrumb'][0]['text'] = "Главная";
+}	
+
+
+
+/*
+* @Функция подключения js yandex.map на страницу контакты
+* 
+*/
+function stavmaster_page_attachments_alter(&$head_elements) {
+	$current_path = \Drupal::request()->getRequestUri();
+	//Подключение библиотеки api.yandex.map
+	if($current_path == '/contacts'){
+		$head_elements['#attached']['library'][] = 'stavmaster/yandex';
+	}
+}	
+
+
+function stavmaster_preprocess_block__test(&$variables) {
+
+$a = array(11,3,5,18,28,25,20);
+
+$c=count($a)-1;
+for($i=0; $i<$c; $i++){
+	
+ if($a[i] >= $a[$i+1]){
+	 $b = $a[$i];
+	 $a[$i+1] = $a[$i];
+	 $a[$i] = $b;
+	 $max = $a[i];
+	 //kint($max);
+	 }
+ else{$max = $a[$i+1]; kint($max);}
+}
+
+	$variables['answer'] =  $a;
+	//kint($max);
+
+}	

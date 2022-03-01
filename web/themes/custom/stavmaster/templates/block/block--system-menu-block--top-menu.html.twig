@@ -1,0 +1,13 @@
+<nav role="navigation" class="navTopMenu col-12 col-lg-10 navbar navbar-expand-lg navbar-light justify-content-between px-lg-0">
+  <a class="navbar-brand d-block d-lg-none" href="/">
+    <img src="/themes/custom/stavmaster/images/logo2.png" alt="Stavmaster">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+  </div>
+</nav>

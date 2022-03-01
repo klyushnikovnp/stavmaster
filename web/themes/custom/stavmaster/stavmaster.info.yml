@@ -1,0 +1,17 @@
+name: Stavmaster
+type: theme
+description: 'Theme for new site Stavmaster.com'
+core_version_requirement: ^9
+base theme: stable
+
+libraries: 
+  - stavmaster/bootstrap
+  - stavmaster/custom
+ 
+regions:
+  top_line: Top Line
+  branding: Branding
+  header: Header
+  content: Content
+  left_sidebar: Left Sidebar
+  footer: Footer

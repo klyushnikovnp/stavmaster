@@ -1,0 +1,15 @@
+<div{{ attributes.addClass('py-5 text-center why') }}>
+	<div class="container">
+		  {{ title_prefix }}
+		  {% if label %}
+			<h2{{ title_attributes }}>{{ label }}</h2>
+		  {% endif %}
+		  {{ title_suffix }}
+		  {% block content %}
+		  		<div class="row"> 
+				{{ content }}
+				</div>
+		  {% endblock %}
+	<a href="tel:+7(962)459-06-60" type="button" class="btn-lg btn-warning font-weight-bold mt-4">Звони: +7 (962) 459-06-60</a>	  
+	</div>  
+</div>
