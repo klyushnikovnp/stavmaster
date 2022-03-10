@@ -1,0 +1,9 @@
+name: Articles Block
+description: Block for context articles on the product pages
+package: Custom
+
+type: module
+core_version_requirement: ^9
+
+dependens:
+  - block

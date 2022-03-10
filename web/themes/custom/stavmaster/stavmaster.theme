@@ -34,7 +34,6 @@ function stavmaster_theme_suggestions_block_alter(array &$suggestions, array $va
 	if(@$variables['elements']['content']['#view_id'] == 'video'){
 		$suggestions[] = $suggestions[2].'_'.@$variables['elements']['content']['#view_id'];
 	}	
-	
   }
 
 }
@@ -127,24 +126,3 @@ function stavmaster_page_attachments_alter(&$head_elements) {
 }	
 
 
-function stavmaster_preprocess_block__test(&$variables) {
-
-$a = array(11,3,5,18,28,25,20);
-
-$c=count($a)-1;
-for($i=0; $i<$c; $i++){
-	
- if($a[i] >= $a[$i+1]){
-	 $b = $a[$i];
-	 $a[$i+1] = $a[$i];
-	 $a[$i] = $b;
-	 $max = $a[i];
-	 //kint($max);
-	 }
- else{$max = $a[$i+1]; kint($max);}
-}
-
-	$variables['answer'] =  $a;
-	//kint($max);
-
-}	
