@@ -1,0 +1,25 @@
+<div{{ content_attributes }}>
+	<div class="col-12 servicesImg px-0 my-3">
+	{{ content.field_images }}
+	</div>	
+	{{ content.body }}
+	{% if content.field_action_button %}
+		{{ content.field_action_button }}
+	{% endif %}
+	<div class="col-12 text-center mt-5">
+		<h2>Цены за услуги</h2>
+	</div>	
+	{% if content.field_price_services %}
+		<div class="col-12 servicesPrice px-0 mt-5">
+			{{ content.field_price_services }}
+		</div>
+	{% endif %}
+	{% if content.field_solve_problems %}
+	<div class="col-12 text-center mt-5">
+		<h2>{{ content.field_solve_problem }}</h2>
+	</div>		
+		<div class="col-12 servicesProblems px-0 mt-3">
+			{{ content.field_solve_problems }}
+		</div>
+	{% endif %}	
+</div>

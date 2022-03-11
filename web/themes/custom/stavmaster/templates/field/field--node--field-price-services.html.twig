@@ -1,0 +1,12 @@
+<table class="table table-bordered">
+  <thead class="table-primary">
+    <tr class="text-center p18">
+      <th scope="col" width="60%" class="border-bottom-0">Наименование</th>
+      <th scope="col" width="15%" class="border-bottom-0">Единицы измерения</th>
+      <th scope="col" width="25%" class="border-bottom-0">Цена, руб.</th>
+    </tr>
+  </thead>
+{% for item in items %}
+	{{ item.content }}
+{% endfor %}
+</table>
