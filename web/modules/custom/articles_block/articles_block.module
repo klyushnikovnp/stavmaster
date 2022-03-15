@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+
 /**
  * Implement hook_theme()
 */
@@ -8,13 +11,29 @@ function articles_block_theme($existing, $type, $theme, $path){
 	return array(
 		'block_articles_product' => array(
 			'variables' => array(
-				'items' => NUll,
+				'result' => NUll,
 			)	
 		)
 	);
 }
 
 function template_preprocess_block_articles_product(&$variables){
-	kint($variables); 
+	
+	foreach($variables['result'] as $key=>$value){
+
+		$variables['articles'][$key]['title'] = $value->getTitle();;
+		$variables['articles'][$key]['url'] = "/node/".$value->id();
+		$variables['articles'][$key]['body'] = $value->get('body')->summary;
+
+
+		$mid = $value->get('field_images')->target_id;
+		$media = Media::load($mid);
+		$fid = $media->field_media_image->target_id;
+		$file = File::load($fid);
+		$url = $file->getFileUri();
+		$img = \Drupal::service('file_system')->realpath($url);
+		$variables['articles'][$key]['image'] = substr($img, 44);
+	}
 }
 
+ 

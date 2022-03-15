@@ -25,38 +25,64 @@ class articles extends BlockBase{
    */
   public function build(){
 	  
-	  $items = $this->informat();
-	  kint($items);
+	  //kint($items);
 	  	  
 	  return array(
 		'#theme' => 'block_articles_product',
-		'#items' => "333",
+		'#result' => $this->result(),
+		'#article_list' => '',
 	  );
   }   
   
-  
-  private function informat(){
+/**
+ * Get ID node
+ * $id - ID node 
+ * 
+*/  
+  private function getIdPage(){
 	$id_page = \Drupal::routeMatch()->getParameter('node');
-	kint($id_page->id());
-	$id =$id_page->id();
+	$id = $id_page->id();
+	return $id;	
+  }
+  
+/**
+ * Get list articles
+ * $id - input $id services
+ * $return list articles
+*/  
+  private function getListActicles($id){
+	$query = \Drupal::entityQuery('node');
+	$query->condition('type', 'article');
+	$query->condition('field_tags', $id);
+	$query->condition('status', 1); 
+	$nids = $query->execute();
+
+	$articles = \Drupal\node\Entity\Node::loadMultiple($nids);
+	
+	return $articles;  
+	}
+  
+/**
+ * Provides resault information
+*/   
+  private function result(){
+	//get id node
+	$id = $this->getIdPage();
 	
 	$query = \Drupal::entityQuery('node');
 	$query->condition('type', 'services');
 	$query->condition('nid', $id);
 	$query->condition('status', 1); 
-	$id_services = $query->execute();
+	$result_services = $query->execute();
 	
+	$nodes = \Drupal\node\Entity\Node::loadMultiple($result_services);
+	$services = $nodes[$id]->get('field_category_service')->getValue();
+	//ID page services
+	$id_services = $services[0]['target_id'];
+	//get list articles
+	$result = $this->getListActicles($id_services);
 	
-	/*$query = \Drupal::entityQuery('node');
-	$query->condition('type', 'article');
-	$query->condition('status', 1); 
-	$nids = $query->execute();*/
-	
-	$nodes = \Drupal\node\Entity\Node::loadMultiple($id_services);
-	$a = $nodes[7]->get('field_category_service')->getValue();
-	//$a = $nodes->get();
-	//return $nodes; 
-	return $a;
+	return $result;
 
   }
   
