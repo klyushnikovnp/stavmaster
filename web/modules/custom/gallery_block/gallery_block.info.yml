@@ -1,0 +1,9 @@
+name: Gallery block
+description: Block for gallery on the product page
+package: Custom
+
+type: module
+core_version_requirement: ^9
+
+dependens: 
+  - block

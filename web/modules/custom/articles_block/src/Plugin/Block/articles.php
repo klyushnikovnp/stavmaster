@@ -54,6 +54,7 @@ class articles extends BlockBase{
 	$query = \Drupal::entityQuery('node');
 	$query->condition('type', 'article');
 	$query->condition('field_tags', $id);
+	$query->range(0, 3);	
 	$query->condition('status', 1); 
 	$nids = $query->execute();
 
