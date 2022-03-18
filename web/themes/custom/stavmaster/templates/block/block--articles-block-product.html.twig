@@ -1,10 +1,14 @@
 <div{{ attributes }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
+	<div class="w-100 text-center">
+		<h2{{ title_attributes }}>{{ label }}</h2>
+	</div>
   {% endif %}
   {{ title_suffix }}
+  <div class="row">
   {% block content %}
     {{ content }}
   {% endblock %}
+  </div>
 </div>

@@ -85,6 +85,7 @@ class gallery extends BlockBase{
  * $return url image
 */  
   private function getIMG($mid){
+	  
 		$media = Media::load($mid);
 		$fid = $media->field_media_image_1->target_id;
 		$file = File::load($fid);
@@ -92,7 +93,7 @@ class gallery extends BlockBase{
 		$img = \Drupal::service('file_system')->realpath($url);
 		$var = substr($img, 44);
 
-	return $var;  
+	return $var;   
 	}  
 
 
@@ -119,7 +120,7 @@ class gallery extends BlockBase{
 	foreach($id_gallery as $key=>$value){
 		//get list paragraphs
 			$arr_paragraphs = $value->get('field_photo')->getValue();
-		}	 	
+		}	 	 
 		
 	foreach($arr_paragraphs as $paragraph){
 		$pid = $this->getParagraph($paragraph['target_id']);

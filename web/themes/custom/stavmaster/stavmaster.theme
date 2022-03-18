@@ -123,6 +123,9 @@ function stavmaster_page_attachments_alter(&$head_elements) {
 	if($current_path == '/contacts'){
 		$head_elements['#attached']['library'][] = 'stavmaster/yandex';
 	}
+	if(preg_match('/.services./', $current_path)){
+		$head_elements['#attached']['library'][] = 'stavmaster/fancybox';
+	}
 }	
 
 

@@ -21,5 +21,16 @@ custom:
 yandex: 
   header: true
   js:
-    https://api-maps.yandex.ru/2.1/?apikey=b8ca0aaf-dc7c-4f94-91ce-897d9eaabc1f&lang=ru_RU: { type: external }      
+    https://api-maps.yandex.ru/2.1/?apikey=b8ca0aaf-dc7c-4f94-91ce-897d9eaabc1f&lang=ru_RU: { type: external } 
+
+
+fancybox:
+  css:
+    theme: 
+      https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css: { type: external } 
+      
+  header: true      
+  js: 
+    https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js: { type: external }
+    
     
