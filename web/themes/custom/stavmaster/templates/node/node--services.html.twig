@@ -6,10 +6,10 @@
 	{% if content.field_action_button %}
 		{{ content.field_action_button }}
 	{% endif %}
+	{% if content.field_price_services %}	
 	<div class="col-12 text-center mt-5">
 		<h2>Цены за услуги</h2>
 	</div>	
-	{% if content.field_price_services %}
 		<div class="col-12 servicesPrice px-0 mt-5">
 			{{ content.field_price_services }}
 		</div>
@@ -21,5 +21,15 @@
 		<div class="col-12 servicesProblems px-0 mt-3">
 			{{ content.field_solve_problems }}
 		</div>
+	{% endif %}	
+	<div class="col-12 text-center mt-5">
+		<h2>Наши работы</h2>
+	</div>		
+	{% if content.field_services_video %}
+		<div class="col-12 servicesVideo px-0 mt-3">
+			<div class="row">
+				{{ content.field_services_video }}
+			</div>	
+		</div>	
 	{% endif %}	
 </div>
