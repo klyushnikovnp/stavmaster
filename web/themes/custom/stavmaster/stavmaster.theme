@@ -128,4 +128,12 @@ function stavmaster_page_attachments_alter(&$head_elements) {
 	}
 }	
 
+/*
+*
+* @Исправление Notice при выводе блока video VK на странице продукта
+*/
+function stavmaster_preprocess_field__paragraph__video_rutube(&$variables) {
+	$tempArr = explode('?',$variables['items'][0]['content']['#context']['value']);
+	$variables['vkone']= $tempArr[1];
+}	
 
