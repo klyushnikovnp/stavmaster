@@ -6,14 +6,14 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('nav topMenu d-block d-lg-flex align-items-center') }}>
+      <ul{{ attributes.addClass('nav topMenu d-flex align-items-end align-items-lg-center flex-column flex-lg-row') }}>
     {% else %}
       <ul>
     {% endif %} 
     {% for item in items %}
       <li{{ item.attributes.addClass('nav-item ml-lg-0 ml-xl-4 d-flex align-items-center') }}>
 	  {% if loop.index != 1 %}
-		<span class="material-icons">fiber_manual_record</span>
+		<span class="material-icons d-none d-lg-block">fiber_manual_record</span>
 	  {% endif %} 	
         {{ link(item.title, item.url, item.attributes.addClass('nav-link')) }}
         {% if item.below %}

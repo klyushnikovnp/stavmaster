@@ -26,13 +26,16 @@ body{font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 300;}
 .navbar-light .navbar-nav .nav-link{color: #41424a;}
 .navbar-light .navbar-nav .nav-link:focus, 
 .navbar-light .navbar-nav .nav-link:hover {color: #0c9b48;}
-.mainMenu .nav-item{width: 10rem; text-align: center;}
+.mainMenu .nav-item a{width: 10rem; text-align: center;}
 .dropdown-toggle{white-space: normal;}
 .dropdown-toggle::after{border-top: none;}
 .adPhone a, .mainPhone a{font-size: 1.3rem;}
 .adPhone a:hover, .mainPhone a:hover{color: #0c9b48!important;}
 .branding a:hover{text-decoration: none;}
 .fx{background: white; top: 0px; z-index: 100; box-shadow: 0 0 3px rgba(0,0,0,0.3);}
+.dropdown-menu{margin: 0; border-radius: 0 0 0.25rem 0.25rem; padding: 0;}
+.dropdown-item a{text-align: left!important;} 
+.dropdown-item{width: 16rem; padding: 0.5rem 1rem} 
 
 /*bunner*/
 .bunner .action{
@@ -107,6 +110,7 @@ footer{background: url("/themes/custom/stavmaster/images/footer.png") no-repeat 
 .articleTags .material-icons {font-size: 16px; color: #65ccef;}
 .articleTags a, 
 #block-stavmaster-content a{color: #65ccef;}
+.articleImg img{width: 100%; height: auto;}
 
 /*Services*/
 .servicesImg img{width: 100%; height: auto;}
@@ -137,6 +141,7 @@ footer{background: url("/themes/custom/stavmaster/images/footer.png") no-repeat 
 @media (max-width: 992px) {
 	
 .articleImg img{width: 100%; height: auto;}	
+.topContacts{border-bottom: none!important;} 
 
 } 
  
@@ -153,6 +158,10 @@ footer{background: url("/themes/custom/stavmaster/images/footer.png") no-repeat 
 .articleVideo iframe{width: 100%; height: 350px;}
 #block-stavmaster-content article img{width: 100%!important; height: auto!important;}
 #block-stavmaster-content .solveProblems article img {width: 50px!important; height: 50px!important;}
+.navTopMenu .nav-link{font-size: 16px;}
+.topMenu a.nav-link{display: block!important; width: 100%;}
+.nav-item{width: 100%; text-align: right!important;}
+
 }  
  
 @media (max-width: 576px) {

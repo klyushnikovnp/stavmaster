@@ -137,3 +137,13 @@ function stavmaster_preprocess_field__paragraph__video_rutube(&$variables) {
 	$variables['vkone']= $tempArr[1];
 }	
 
+
+/*
+*
+* @Исправление Notice при выводе блока video VK на странице продукта
+*/
+function stavmaster_preprocess_paragraph__action_button(&$variables) {
+	$site_config = \Drupal::config('system.site');
+	$variables['phone'] = $site_config->get('name');
+}	
+
