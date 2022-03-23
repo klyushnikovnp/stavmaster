@@ -147,3 +147,15 @@ function stavmaster_preprocess_paragraph__action_button(&$variables) {
 	$variables['phone'] = $site_config->get('name');
 }	
 
+/*
+*
+* @Добавление для пункта меню "Услуги" класса link_services
+*/
+function stavmaster_preprocess_menu__top_menu(&$variables) {
+	foreach($variables['items'] as $value){
+		if($value['title'] == 'Услуги'){
+			$value['attributes']->addClass('link-services');				
+		}
+	}
+}	
+

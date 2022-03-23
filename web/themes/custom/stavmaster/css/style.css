@@ -35,7 +35,12 @@ body{font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 300;}
 .fx{background: white; top: 0px; z-index: 100; box-shadow: 0 0 3px rgba(0,0,0,0.3);}
 .dropdown-menu{margin: 0; border-radius: 0 0 0.25rem 0.25rem; padding: 0;}
 .dropdown-item a{text-align: left!important;} 
-.dropdown-item{width: 16rem; padding: 0.5rem 1rem} 
+.dropdown-item{width: 16rem; padding: 0.5rem 1rem; border-bottom: 1px solid #cfcbcb;} 
+nav.navbar .dropdown:hover > .menu_link_content >.dropdown-menu {display: block;} 
+.double-mobile ul{list-style: none; padding-left: 0;}
+.double-mobile li a{color: #41424a; font-weight: 400; font-size: 16px; padding: 0.5rem 1rem;}
+.double-mobile li a:hover{text-decoration: none;}
+
 
 /*bunner*/
 .bunner .action{

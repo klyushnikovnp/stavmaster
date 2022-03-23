@@ -23,5 +23,22 @@
 			$('.branding').removeClass('position-fixed fx');
 		}
 	});	
+	
+	
+	$(".link-services").attr("href", "#");	
+
+
+ 
+	$('.link-services').click(function(){ 
+		$('.double-mobile').slideToggle(300);      
+		$('.topMenu').removeClass("d-flex");
+		$('.topMenu').css("display", "none");
+		return false;
+	}); 
+	$('.close-double-mobile').click(function(){ 
+		$('.double-mobile').slideToggle(300);      
+		$('.topMenu').slideToggle(300);      
+		return false;
+	}); 	
  
 })(jQuery);
