@@ -35,11 +35,20 @@ body{font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 300;}
 .fx{background: white; top: 0px; z-index: 100; box-shadow: 0 0 3px rgba(0,0,0,0.3);}
 .dropdown-menu{margin: 0; border-radius: 0 0 0.25rem 0.25rem; padding: 0;}
 .dropdown-item a{text-align: left!important;} 
-.dropdown-item{width: 16rem; padding: 0.5rem 1rem; border-bottom: 1px solid #cfcbcb;} 
+.dropdown-item{width: 16rem; padding: 0.5rem; border-bottom: 1px solid #cfcbcb;} 
 nav.navbar .dropdown:hover > .menu_link_content >.dropdown-menu {display: block;} 
 .double-mobile ul{list-style: none; padding-left: 0;}
 .double-mobile li a{color: #41424a; font-weight: 400; font-size: 16px; padding: 0.5rem 1rem;}
+a.close-double-mobile {padding: 0px 0.25rem!important; width: fit-content;}
 .double-mobile li a:hover{text-decoration: none;}
+li.dropdown-item {white-space: normal;}
+li.dropdown-item a{width: 100%!important;}
+.link-services:before{
+content: "";
+background: url("/themes/custom/stavmaster/images/icon-services.jpg") no-repeat center right; 
+margin-right: 5px;
+padding-right: 20px;
+} 
 
 
 /*bunner*/
@@ -89,7 +98,7 @@ a.btn-lg{text-decoration: none;}
 .articles .card:hover{top: -10px;}
 
 .feedback{background: url("/themes/custom/stavmaster/images/bg-feedback.jpg") no-repeat top center;} 
-.feedback .carousel-item{height: 490px;}
+.feedback .carousel-item{height: 360px;}
 .feedback .carousel-caption .header{background: #feb13f; border-radius: 10px 10px 0px 0px; margin-left: -2rem;}
 .feedback .btn-primary{width: fit-content; margin-top: -1rem; margin-left: 2rem;}
 .feedback .carousel-control-next, 
@@ -106,7 +115,7 @@ a.btn-lg{text-decoration: none;}
 /*Footer*/
 footer{background: url("/themes/custom/stavmaster/images/footer.png") no-repeat bottom center;} 
 .footer{bottom: 0px;}
-.footerWrapper{background: linear-gradient(to bottom ,rgba(9,53,27,0) ,rgba(9,53,27,1)); height: 647px;}
+.footerWrapper{background: linear-gradient(to bottom ,rgba(9,53,27,0) ,rgba(0,76,31,1)); height: 647px;}
 .footer a{color: #fff;}
  
  
@@ -131,6 +140,18 @@ footer{background: url("/themes/custom/stavmaster/images/footer.png") no-repeat 
  
 /*map*/
 #map{height: 300px;} 
+
+.scrollup{
+width:40px;
+height:40px;
+opacity:0.3;
+position:fixed;
+bottom:50px;
+right:15px;
+display:none;
+text-indent:-9999px;
+background: url("/themes/custom/stavmaster/images/icon_top.png") no-repeat;
+}
  
 
 @media (max-width: 1200px) {
@@ -144,10 +165,10 @@ footer{background: url("/themes/custom/stavmaster/images/footer.png") no-repeat 
 } 
 
 @media (max-width: 992px) {
-	
 .articleImg img{width: 100%; height: auto;}	
 .topContacts{border-bottom: none!important;} 
-
+.navTopMenu .nav-link{font-size: 16px;}
+.feedback .carousel-item .text { font-size: 17px;}
 } 
  
 @media (max-width: 768px) {
@@ -163,9 +184,9 @@ footer{background: url("/themes/custom/stavmaster/images/footer.png") no-repeat 
 .articleVideo iframe{width: 100%; height: 350px;}
 #block-stavmaster-content article img{width: 100%!important; height: auto!important;}
 #block-stavmaster-content .solveProblems article img {width: 50px!important; height: 50px!important;}
-.navTopMenu .nav-link{font-size: 16px;}
 .topMenu a.nav-link{display: block!important; width: 100%;}
 .nav-item{width: 100%; text-align: right!important;}
+.feedback .carousel-item{height: 490px;}	
 
 }  
  

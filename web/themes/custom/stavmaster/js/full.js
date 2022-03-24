@@ -24,11 +24,8 @@
 		}
 	});	
 	
-	
+	//@mobile menu	
 	$(".link-services").attr("href", "#");	
-
-
- 
 	$('.link-services').click(function(){ 
 		$('.double-mobile').slideToggle(300);      
 		$('.topMenu').removeClass("d-flex");
@@ -40,5 +37,19 @@
 		$('.topMenu').slideToggle(300);      
 		return false;
 	}); 	
+
+	/*Стрелка вверх*/
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.scrollup').fadeIn();
+		} else {
+			$('.scrollup').fadeOut();
+		}
+	});
+	 
+	$('.scrollup').click(function(){
+		$("html, body").animate({ scrollTop: 0 }, 600);
+		return false;
+	});		
  
 })(jQuery);

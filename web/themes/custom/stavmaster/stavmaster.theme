@@ -154,8 +154,12 @@ function stavmaster_preprocess_paragraph__action_button(&$variables) {
 function stavmaster_preprocess_menu__top_menu(&$variables) {
 	foreach($variables['items'] as $value){
 		if($value['title'] == 'Услуги'){
-			$value['attributes']->addClass('link-services');				
+			$value['attributes']->addClass('link-services d-block d-lg-none');				
 		}
+		if($value['title'] == 'Другие услуги'){
+			$value['attributes']->addClass('other-services');				
+		}		
 	}
 }	
+
 
