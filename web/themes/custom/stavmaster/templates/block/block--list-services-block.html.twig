@@ -1,4 +1,4 @@
-<div{{ attributes.addClass('py-5 listServices') }}>
+<div{{ attributes.addClass('pt-5 listServices') }}>
 	<div class="container">
 		  {{ title_prefix }}
 		  {% if label %}
@@ -12,5 +12,8 @@
 				{{ content }}
 				</div>
 		  {% endblock %}
+		  <div class="w-100 text-center mb-5">
+			<a href="/services" type="button" class="btn-lg btn-warning font-weight-bold mt-4">Все услуги</a>
+		  </div>
 	</div>  
 </div>

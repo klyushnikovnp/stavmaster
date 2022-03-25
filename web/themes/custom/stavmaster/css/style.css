@@ -77,12 +77,20 @@ transition: all .3s ease-in
 .frontPage h1{font-weight: 700;}
 .frontPage .listServices .descriptioin{font-weight: 400;}
 .frontPage .card{border: none;}
-.frontPage .listServices .card-body{background: #ecf9fd; transition: all .2s ease-in;}
-.frontPage .listServices .card-body:hover{background: #feb13f; color: #fff;}
-.frontPage .listServices .card-body h5:hover{color: #fff;}
+.listServices .card-body{background: #ecf9fd; transition: all .2s ease-in;}
+.listServices .card-body:hover{background: #feb13f; color: #fff;}
+.listServices .card-body h5:hover{color: #fff;}
 .frontPage h2{font-size: 36; font-weight: 700;}
 .dotted .dot{width: 15px; height: 15px; background: #feb13f;}
 #block-list-services-block{background: linear-gradient(to bottom, #33d57d, #07853b);}
+#block-list-services-block:after{
+content: "";
+background: url("/themes/custom/stavmaster/images/bg.png") no-repeat bottom center;
+display: block; 
+width: 100%;
+height: 83px;
+margin-top: 3rem;
+}
 .video{background: #e8f8fd;}
 .video iframe,
 .videos iframe
@@ -113,7 +121,7 @@ a.btn-lg{text-decoration: none;}
 
 
 /*Footer*/
-footer{background: url("/themes/custom/stavmaster/images/footer.png") no-repeat bottom center;} 
+footer{background: url("/themes/custom/stavmaster/images/footer.jpg") no-repeat bottom center;} 
 .footer{bottom: 0px;}
 .footerWrapper{background: linear-gradient(to bottom ,rgba(9,53,27,0) ,rgba(0,76,31,1)); height: 647px;}
 .footer a{color: #fff;}
