@@ -1,0 +1,15 @@
+{% for item in feedback  %}
+		{% if loop.first %} 
+			<div class="carousel-item active">
+		{% else %}
+			<div class="carousel-item">
+		{% endif %}
+		<div class="carousel-caption h-100 pb-5 text-left">
+			<div class="header p28 px-4">{{ item.title }}</div>
+			<div class="body h-100">
+				<div class="text bg-white text-dark p20 shadow rounded-bottom px-4 py-3">{{ item.body }}</div>			
+				<a class="btn btn-primary d-flex" href="/feedback" role="button">Все отзывы <span class="material-icons">navigate_next</span></a> 			
+			</div>
+		</div>
+	</div>
+{% endfor %}

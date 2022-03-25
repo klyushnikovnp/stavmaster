@@ -1,0 +1,22 @@
+<div{{ attributes.addClass(' pt-4 mt-3 mb-5 feedback rounded-lg') }}>
+	  {{ title_prefix }}
+	  {% if label %}
+	  <div class="w-100 text-center"> 
+		<h2{{ title_attributes }}>{{ label }}</h2>
+	  </div>
+	  {% endif %}
+	  {{ title_suffix }}
+	<div id="carouselExampleFeedback" class="carousel slide bunner" data-ride="carousel">
+	  <div class="carousel-inner">
+			{{ content }}
+	  </div>  
+	  <a class="carousel-control-prev" href="#carouselExampleFeedback" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Предыдущий</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleFeedback" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Следующий</span>
+	  </a>
+	</div>
+</div>

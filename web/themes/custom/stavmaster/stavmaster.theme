@@ -162,4 +162,12 @@ function stavmaster_preprocess_menu__top_menu(&$variables) {
 	}
 }	
 
+/*
+*
+* @Добавление в title всех страниц надписи "Компания StavMaster"
+*/
+function stavmaster_preprocess_html(&$variables) {
+	$variables['head_title']['name'] = 	"Компания StavMaster: ". $variables['head_title']['name'];
+}	
+
 
