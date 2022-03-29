@@ -170,4 +170,13 @@ function stavmaster_preprocess_html(&$variables) {
 	$variables['head_title']['name'] = 	"Компания StavMaster: ". $variables['head_title']['name'];
 }	
 
+/*
+*
+* @в файле paragraph--price-services.html.twig преобразование text->html {{ text | raw }}
+*/
+function stavmaster_preprocess_paragraph__price_services(&$variables) {
+	$value = $variables['elements']['field_table_unit']['#items']->getValue();
+	$variables['new_field_table_unit'] = $value[0]['value']; 
+}	
 
+ 

@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Implement hook_theme()
+*/
+
+function yandex_weather_theme($existing, $type, $theme, $path){
+	return array(
+		'block_ya_weather' => array(
+			'variables' => array(
+				'result' => NUll,
+			)	 
+		),
+		'views_view_unformatted__bunner__block_1' => array(
+			'variables' => array(
+				'result' => NUll,
+			)	 
+		),		
+	);
+}
+
+
+function template_preprocess_block_ya_weather(&$variables){
+
+	//@true = значение ясной погоды
+	//@false = значение дождливой погоды
+	// источник https://yandex.ru/dev/weather/doc/dg/concepts/forecast-info.html
+	$condition = array(
+		'clear',
+		'partly-cloudy',
+		'cloudy',
+		'overcast'
+	);
+	$fact = $variables['result']['fact']['condition'];
+	
+	if(in_array($fact, $condition)){
+		$variables['fact_weather'] = TRUE;
+	}
+
+	//kint($variables);	
+	
+}
+
+function template_preprocess_views_view_unformatted__bunner__block_1(&$variables){
+//usort($variables['rows']);
+//kint($variables['rows']);
+
+}
+

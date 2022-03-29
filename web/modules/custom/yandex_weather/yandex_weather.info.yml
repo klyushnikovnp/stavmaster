@@ -1,0 +1,9 @@
+name: API Yandex weather
+description: Block for import information Yandex weather
+package: Custom
+
+type: module
+core_version_requirement: ^9
+
+dependens: 
+  - block
