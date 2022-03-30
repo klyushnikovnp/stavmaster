@@ -145,6 +145,8 @@ function stavmaster_preprocess_field__paragraph__video_rutube(&$variables) {
 function stavmaster_preprocess_paragraph__action_button(&$variables) {
 	$site_config = \Drupal::config('system.site');
 	$variables['phone'] = $site_config->get('name');
+
+	$variables['actioncervices'] = (count($variables['content']['field_text_action']) > 2)? true: false;
 }	
 
 /*
@@ -179,4 +181,4 @@ function stavmaster_preprocess_paragraph__price_services(&$variables) {
 	$variables['new_field_table_unit'] = $value[0]['value']; 
 }	
 
- 
+
