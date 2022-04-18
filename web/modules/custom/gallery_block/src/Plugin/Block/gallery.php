@@ -116,24 +116,24 @@ class gallery extends BlockBase{
 	$id_services = $services[0]['target_id'];
 	//get list photos
 	$id_gallery = $this->getListphotos($id_services);
-	
 	foreach($id_gallery as $key=>$value){
 		//get list paragraphs
 			$arr_paragraphs = $value->get('field_photo')->getValue();
 		}	 	 
-		
-	foreach($arr_paragraphs as $paragraph){
-		$pid = $this->getParagraph($paragraph['target_id']);
-		foreach($pid as $k=>$v){
-			$mid = $v->get('field_photo')->target_id;
-			if(!is_null($mid)){
-				$url = $this->getIMG($mid);
-				$result[$k]['image'] = $url;
+	if(!is_null(@$arr_paragraphs)){		
+		foreach($arr_paragraphs as $paragraph){
+			$pid = $this->getParagraph($paragraph['target_id']);
+			foreach($pid as $k=>$v){
+				$mid = $v->get('field_photo')->target_id;
+				if(!is_null($mid)){
+					$url = $this->getIMG($mid);
+					$result[$k]['image'] = $url;
+				}
 			}
 		}
 	}	
 
-	return $result;
+	return @$result;
 
   }  
 }  

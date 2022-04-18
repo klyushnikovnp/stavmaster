@@ -69,6 +69,9 @@ function stavmaster_preprocess_image(&$variables) {
 	if($variables['style_name'] == 'card'){
 		$variables['attributes']['class'][] = 'card-img-top';	
 	}
+	if($variables['style_name'] == 'fancybox'){
+		$variables['attributes']['class'][] = 'fancybox';	  
+	}	
 }	
 
 
@@ -123,7 +126,9 @@ function stavmaster_page_attachments_alter(&$head_elements) {
 	if($current_path == '/contacts'){
 		$head_elements['#attached']['library'][] = 'stavmaster/yandex';
 	}
-	if(preg_match('/.services./', $current_path) OR preg_match('/.node./', $current_path)){
+	if(	preg_match('/.services./', $current_path) OR
+		preg_match('/.photogallery./', $current_path) OR
+		preg_match('/.node./', $current_path)){
 		$head_elements['#attached']['library'][] = 'stavmaster/fancybox';
 	}
 }	
@@ -177,8 +182,18 @@ function stavmaster_preprocess_html(&$variables) {
 * @в файле paragraph--price-services.html.twig преобразование text->html {{ text | raw }}
 */
 function stavmaster_preprocess_paragraph__price_services(&$variables) {
-	$value = $variables['elements']['field_table_unit']['#items']->getValue();
-	$variables['new_field_table_unit'] = $value[0]['value']; 
+	if(isset($variables['elements']['field_table_unit']['#items'])){
+		$value = $variables['elements']['field_table_unit']['#items']->getValue();
+		$variables['new_field_table_unit'] = $value[0]['value']; 	
+	}	
 }	
 
+
+/*
+*
+* @в файле paragraph--price-services.html.twig преобразование text->html {{ text | raw }}
+*/
+function stavmaster_preprocess_block__custom_feedback_block(&$variables) {
+	$variables['visible'] = (count($variables['content']['#result']) > 0)? true: false;
+}	
 

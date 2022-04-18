@@ -1,3 +1,4 @@
+{% if visible %}
 <div{{ attributes.addClass(' pt-4 mt-3 mb-5 feedback rounded-lg') }}>
 	  {{ title_prefix }}
 	  {% if label %}
@@ -8,6 +9,7 @@
 	  {{ title_suffix }}
 	<div id="carouselExampleFeedback" class="carousel slide bunner" data-ride="carousel">
 	  <div class="carousel-inner">
+			{{ content.result }}
 			{{ content }}
 	  </div>  
 	  <a class="carousel-control-prev" href="#carouselExampleFeedback" role="button" data-slide="prev">
@@ -20,3 +22,4 @@
 	  </a>
 	</div>
 </div>
+{% endif %}

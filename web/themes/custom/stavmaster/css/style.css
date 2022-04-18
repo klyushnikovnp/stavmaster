@@ -144,7 +144,8 @@ footer{background: url("/themes/custom/stavmaster/images/footer.jpg") no-repeat 
 #carouselExampleFeedback .carousel-caption{top: 5%;}
 
 
-/*Videos*/ 
+/*Photo*/ 
+.photogallery img{width: 100%; height: auto;}
  
  
 /*map*/

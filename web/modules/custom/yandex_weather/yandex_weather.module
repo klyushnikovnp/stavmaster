@@ -11,7 +11,7 @@ function yandex_weather_theme($existing, $type, $theme, $path){
 				'result' => NUll,
 			)	 
 		),
-		'views_view_unformatted__bunner__block_1' => array(
+		'field__node__field_solve_problems' => array(
 			'variables' => array(
 				'result' => NUll,
 			)	 
@@ -41,9 +41,10 @@ function template_preprocess_block_ya_weather(&$variables){
 	
 }
 
-function template_preprocess_views_view_unformatted__bunner__block_1(&$variables){
-//usort($variables['rows']);
-//kint($variables['rows']);
+function template_preprocess_field__node__field_solve_problems(&$variables){
+
+
+//kint($variables);
 
 }
 

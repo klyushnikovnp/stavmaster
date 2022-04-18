@@ -16,6 +16,9 @@
 	$("ul.dropdown-menu>li").addClass("dropdown-item");
 	$("ul.dropdown-menu>li").removeClass("nav-item");
 	
+	//@fancybox
+	$("img.fancybox").parent().attr("data-fancybox", "gallery");
+	
 	$(window).scroll(function(){
 		if ($(window).scrollTop() > 145){
 			$('.branding').addClass('position-fixed fx');

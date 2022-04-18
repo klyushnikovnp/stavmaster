@@ -24,10 +24,12 @@ function template_preprocess_block_gallery_product(&$variables){
 	// Количесво выводимых фото на странице
 	$number = 3;
 	
-	foreach($variables['result'] as $key=>$value){
-		if($i < $number){
-			$variables['photos'][$key]['image'] = $value['image'];
+	if(@$variables['result']){
+		foreach($variables['result'] as $key=>$value){
+			if($i < $number){
+				$variables['photos'][$key]['image'] = $value['image'];
+			}
+		$i++;	
 		}
-	$i++;	
 	}
 }	 
