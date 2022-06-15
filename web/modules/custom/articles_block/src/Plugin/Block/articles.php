@@ -25,8 +25,6 @@ class articles extends BlockBase{
    */
   public function build(){
 	  
-	  //kint($items);
-	  	  
 	  return array(
 		'#theme' => 'block_articles_product',
 		'#result' => $this->result(),
@@ -54,6 +52,7 @@ class articles extends BlockBase{
 	$query = \Drupal::entityQuery('node');
 	$query->condition('type', 'article');
 	$query->condition('field_tags', $id);
+	$query->sort('created', 'DESC');
 	$query->range(0, 3);	
 	$query->condition('status', 1); 
 	$nids = $query->execute();
@@ -69,7 +68,7 @@ class articles extends BlockBase{
   private function result(){
 	//get id node
 	$id = $this->getIdPage();
-	
+
 	$query = \Drupal::entityQuery('node');
 	$query->condition('type', 'services');
 	$query->condition('nid', $id);

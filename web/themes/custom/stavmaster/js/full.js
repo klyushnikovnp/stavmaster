@@ -39,20 +39,15 @@
 		$('.double-mobile').slideToggle(300);      
 		$('.topMenu').slideToggle(300);      
 		return false;
-	}); 	
-
-	/*Стрелка вверх*/
+	}); 
+	
 	$(window).scroll(function(){
-		if ($(this).scrollTop() > 100) {
-			$('.scrollup').fadeIn();
+		if ($(window).scrollTop() > 7200){
+			$('.call-block').removeClass('position-fixed').addClass('ml-3');
 		} else {
-			$('.scrollup').fadeOut();
+			$('.call-block').addClass('position-fixed').removeClass('ml-3');
 		}
 	});
-	 
-	$('.scrollup').click(function(){
-		$("html, body").animate({ scrollTop: 0 }, 600);
-		return false;
-	});		
+
  
 })(jQuery);

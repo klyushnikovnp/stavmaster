@@ -1,5 +1,8 @@
 <div{{ content_attributes }}>
-	<div class="col-12 servicesImg px-0 my-3">
+	<div class="col-12 servicesImg px-0 my-3 position-relative">
+		<div class="col-12 mt-5 position-absolute">
+			<a href="#" type="button" class="btn btn-warning font-weight-bold text-white">Заказать расчет</a> 	
+		</div>				
 	{{ content.field_images }}
 	</div>	
 	{{ content.body }}
@@ -12,6 +15,9 @@
 	</div>	
 		<div class="col-12 servicesPrice px-0 mt-5">
 			{{ content.field_price_services }}
+			<div class="col-12 mt-5">
+				<a href="tel:+7 (962) 459-06-60" type="button" class="btn btn-warning font-weight-bold text-white d-flex mx-auto"><span class="material-icons mr-2">phone_enabled</span> Консультация инженера</a> 	
+			</div>			
 		</div>
 	{% endif %}
 	{% if content.field_solve_problems %}
@@ -21,7 +27,7 @@
 		<div class="col-12 servicesProblems px-0 mt-3">
 			{{ content.field_solve_problems }}
 		</div>
-	{% endif %}	
+		{% endif %}	
 	<div class="col-12 text-center mt-5">
 		<h2>Наши работы</h2>
 	</div>		
